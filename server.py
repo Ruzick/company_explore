@@ -236,7 +236,7 @@ def largealtair_plot():
     rule = alt.Chart(c_long).mark_rule(color='red').encode(
     y='mean(score)')
     # A dropdown filter
-    columns = list(c.columns.values[:-1])
+    columns = list(c.columns.values[2:])
     column_dropdown = alt.binding_select(options=columns)
     column_select = alt.selection_single(
         fields = ['keyword'],

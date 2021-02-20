@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous"></head>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+<!-- 
+    <title>Hello, world!</title> -->
+  </head>
+<style> 
+  body{ 
+    color: rgb(12, 12, 12); 
+    font-size:20px; 
+    margin: 25px 25px 25px 25px;
+  } 
+  table { 
+    border-collapse: collapse; 
+  } 
+  table td{ 
+    padding: 5px; 
+    background-color: #e5f0fc; 
+  } 
+  td.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+  table.center {
+  margin-left: auto; 
+  margin-right: auto;
+}
+  .tbody { 
+    border-top: 25px solid #feffff; 
+  } 
+  </style>
+
+    <head>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@5"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@4.0.2"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@6"></script>
+    </head>
+    <body>
+        <table >
+            <tbody class="tbody" > 
+            <tr> 
+                <td style="text-align:center;">
+                  <h1 style="color:rgb(3, 82, 82);">{{company}}</h1>
+        
+                  <div id='vis2'></div>
+            <h3>Let's take a look at the groupings of all the companies over all keywords: </h3>
+                <div id='vis3'></div>
+              <p style="text-align:left;">If all keywords were selected, this would be the clustering for all companies as shown in the graph above. {{company}} belongs to cluster number: {{number}} out of a total of {{c_num1}} clusters.</p>
+                <p></p>
+                <!-- <p style="margin-left: 2.5em;padding: 0 7em 2em 0;border-width: 2px; border-color: black; border-style:solid;"> Cluster {{number}} group members are: 
+
+                {% for each in lila %}
+                {{ each }}-
+                {% endfor %}</p>
+                <p style="text-align:left;">Companies outside of your cluster:</p>
+                <p style="margin-left: 2.5em;padding: 0 7em 2em 0;border-width: 2px; border-color: black; border-style:solid;"> Cluster {{number2}} non group members are: 
+        
+                  {% for each in not_ri %}
+                  {{ each }}  -
+                  {% endfor %}</p> -->
+
+                <h3>This is the average score per cluster per chosen keyword:</h3>
+                <div id='vis4'></div>
+
+                <!-- <h3>This is  {{company}}'s Profile :</h3> -->
+
+            
+               <h2 style="color:rgb(3, 82, 82);">How is your company doing with respect to others within its group?</h2>
+        <p>
+             Choose the keyword you would like to explore from the graph's dropdown menu.  Both graphs are interactive so you can scroll up and down to view all scores.
+        </p>
+        
+      
+        <div id='vis1'>       </div>
+        <p>
+
+        </p>
+        <h3>Now let's explore {{company}}  using only the selected keywords</h3>  
+        
+        <div id='vis7'></div>
+
+        <h3>And let's recluster based on those chosen words</h3>  
+        <div id='vis6'></div>
+
+        <p style="text-align:left;">Looks like there are now a total of {{c_num2}} clusters.</p>
+        <p style="text-align:left;">Your company is now in cluster {{number2}}.</p>
+
+        <!-- <p style="text-align:left;">This is the cluster group your company belongs to:</p>
+        <p style="margin-left: 2.5em;padding: 0 7em 2em 0;border-width: 2px; border-color: black; border-style:solid;"> Cluster {{number2}} group members are: 
+
+          {% for each in lila2 %}
+          {{ each }}  -
+          {% endfor %}</p>
+
+          <p style="text-align:left;">Companies outside of your cluster:</p>
+          <p style="margin-left: 2.5em;padding: 0 7em 2em 0;border-width: 2px; border-color: black; border-style:solid;"> Cluster {{number2}} non group members are: 
+  
+            {% for each in not_ri2 %}
+            {{ each }}  -
+            {% endfor %}</p>
+            -->
+            <h3>This is the new average score per cluster per chosen keyword:</h3>
+            <div id='vis8'></div>
+
+
+
+        <h4 style="color:rgb(3, 82, 82);">Let's compare the 3 most important keywords you selected:</h4>
+        <div id='vis5'></div>
+
+ 
+     
+        <p>
+
+        
+        
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <h3>About the score</h3>
+          <p>The score is the sum of all negative and positive reviews given for a keyword per company. The program searches for the phrase that contains the keyword and decides if it is a +1 for positive review, or -1 for a negative review using Sentiment Analysis. It then sums all the +1's and -1's found per keyword giving a total. If a company has equal number of negative reviews to positive reviews for a keyword searched, the total would be 0. This total is then divided by the number of reviews sampled for that company. And finally this number is then increased by a factor of 100 giving the final score.
+
+            Furthermore, in order to label each phrase with a +1 or a -1, sentiment analysis was used in order to train a model consisting of 3,000 positive reviews and 3,000 negative reviews. The model gave an accuracy of over 90% compared to Vader's 70% for the test data. For more details you can find the code at:
+        </p>
+        <a href="Github">https://github.com/Ruzick/compben</a>
+
+      </td>
+    </tr>
+  </table>
+        <script>
+          var spec1 = {{json |  safe}};
+          vegaEmbed("#vis1", spec1);
+          var spec2 = {{json2 |  safe}};
+          vegaEmbed("#vis2", spec2);
+          var spec3 = {{json3 |  safe}};
+          vegaEmbed("#vis3", spec3);
+          var spec4 = {{json4 |  safe}};
+          vegaEmbed("#vis4", spec4);
+          var spec5 = {{json5 |  safe}};
+          vegaEmbed("#vis5", spec5);
+          var spec6 = {{json6 |  safe}};
+          vegaEmbed("#vis6", spec6);
+          var spec7 = {{json7 |  safe}};
+          vegaEmbed("#vis7", spec7);
+          var spec8 = {{json8 |  safe}};
+          vegaEmbed("#vis8", spec8);
+      
+        </script>
+        
+    </body>
+</html>

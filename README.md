@@ -71,11 +71,13 @@ We see three components as a good option, yet two is not a bad option option and
 
 For determining the number of clusters, the elbow plot, silhouette and Davies Bouldin were inspected
 ![elbow](https://user-images.githubusercontent.com/57594261/108615300-c034a700-73d0-11eb-9b50-d8e2b352c984.png)
+
 The elbow plot was not enough to determine the number of clusters, it hinted at 3-4. So I explored the silhouette score. The highest silhouette scores
 were at 2, 5 and 7 clusters.
 ![silhouette](https://user-images.githubusercontent.com/57594261/108615313-c1fe6a80-73d0-11eb-8308-b963a1080728.png)
 Finally looking at the Davis Bouldin scores, lowest being at 7 clusters.
-![davies_bouldin](https://user-images.githubusercontent.com/57594261/108615312-c1fe6a80-73d0-11eb-82e2-ba2795f120e6.png)
+![davies_bouldin](https://user-images.githubusercontent.com/57594261/108615787-887c2e00-73d5-11eb-954f-d30613c497e1.png)
+
 
 And if we compare the two together:
 Score for number of cluster(s) 2: -1255950.727

@@ -69,10 +69,10 @@ Looking at the Scree plot
 
 ![numberofcomp](https://user-images.githubusercontent.com/57594261/108615892-849cdb80-73d6-11eb-8026-2654a306eca0.png)
 
-
 We see three components as a good option, yet two is not a bad option option and easier to visiualize, I chose two components.
 
 For determining the number of clusters, the elbow plot, silhouette and Davies Bouldin were inspected
+
 ![elbow](https://user-images.githubusercontent.com/57594261/108615894-85357200-73d6-11eb-99db-405072bccbc1.png)
 
 The elbow plot was not enough to determine the number of clusters, it hinted at 3-4, possibly 7. So I explored the silhouette score. The highest silhouette scores
@@ -90,31 +90,31 @@ And if we compare the two together:
 Score for number of cluster(s) 2: -1255950.727
 Silhouette score for number of cluster(s) 2: 0.334
 Davies Bouldin score for number of cluster(s) 2: 1.115
-.........................................................
+
 Score for number of cluster(s) 3: -988375.702
 Silhouette score for number of cluster(s) 3: 0.282
 Davies Bouldin score for number of cluster(s) 3: 1.188
-.........................................................
+
 Score for number of cluster(s) 4: -828609.385
 Silhouette score for number of cluster(s) 4: 0.272
 Davies Bouldin score for number of cluster(s) 4: 1.157
-.........................................................
+
 Score for number of cluster(s) 5: -746083.488
 Silhouette score for number of cluster(s) 5: 0.287
 Davies Bouldin score for number of cluster(s) 5: 1.062
-.........................................................
+
 Score for number of cluster(s) 6: -669064.051
 Silhouette score for number of cluster(s) 6: 0.259
 Davies Bouldin score for number of cluster(s) 6: 1.101
-.........................................................
+
 Score for number of cluster(s) 7: -597546.287
 Silhouette score for number of cluster(s) 7: 0.276
 Davies Bouldin score for number of cluster(s) 7: 0.926
-.........................................................
+
 Score for number of cluster(s) 8: -579422.799
 Silhouette score for number of cluster(s) 8: 0.235
 Davies Bouldin score for number of cluster(s) 8: 1.181
-.........................................................
+
 We can see that two clusters would probably be optimal. When it came to implementing the program, for simplicity I chose two go for only one analysis, the silhouette score.
 The best silhoutte scores where at two clusters.
  

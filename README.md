@@ -74,17 +74,30 @@ __Methods__
 </p>
 
 __Exploring Sentiment Analysis__
+
 At first I was tempted to use Vader's pretrained model for the labeling, but because I wanted to se something tailored to review text I decided to train my own.
 The training was performed on a very even data set of 1:1 positive to negatove reviews for a total of 6,000 reviews.
+
+<p align="center">
+  <img width="910" height="360" src="https://user-images.githubusercontent.com/57594261/108630337-361d2a80-7432-11eb-897a-828b956de744.png">
+</p>
 Tested the model's accuracy and compared against Vader's. Model gave acurracy of 90%, Vader's of 70% on test set.
-For Vader, I set the treshold to -1 for anything lower than or euqal to  0 and +1 otherwise.
+For Vader, I set the treshold to -1 for anything lower than or equal to  0, +1 otherwise.
+<p align="center">
+  <img width="650" height="600" src="https://user-images.githubusercontent.com/57594261/108630341-39b0b180-7432-11eb-9a8c-510814e9f540.png">
+</p>
+
 
 __Exploring the score__
-The score is the summation of all the sentiment labels given for that keyword per company text database. The search will look in each of the 2,000 reviews per company and when the keyword is matched it will return the label of +1 or -1. As an example if looking for keyword 'free coffee' and free coffee appears in 7 positive reviews and 5 negative reviews, the summation would give 2. Ideally 2,000 reviews from company are scraped, but some companies may not have that many reviews in glassdoor and so data is normalized per size of sample collected.To make this fraction friendlier to the eye, I multiplied it by 100. A score of 0.04 would translate into 0.04% positive, this is as if we were saying that word appears in 0.04% of the reviews as a positive; we can also have scores of -0.04, meaning this word has the same effect as if it appeared negative on 0.04% of the document. What is 0.04% really, it feels like a low score, how does it compare to other keywords? After doing some simple stats on the average of each keyword per company we find that 0.04% is close to the mean and so it is not too low of a score. 
 
+The score is the summation of all the sentiment labels given for that keyword per company text database. The search will look in each of the 2,000 reviews per company and when the keyword is matched it will return the label of +1 or -1. As an example if looking for keyword 'free coffee' and free coffee appears in 7 positive reviews and 5 negative reviews, the summation would give 2. Ideally 2,000 reviews from company are scraped, but some companies may not have that many reviews in glassdoor and so data is normalized per size of sample collected.To make this fraction friendlier to the eye, I multiplied it by 100. A score of 0.04 would translate into 0.04% positive, this is as if we were saying that word appears in 0.04% of the reviews as a positive; we can also have scores of -0.04, meaning this word has the same effect as if it appeared negative on 0.04% of the document. What is 0.04% really, it feels like a low score, how does it compare to other keywords? After doing some simple stats on the average of each keyword per company we find that 0.04% is close to the mean and so it is not too low of a score. 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/57594261/108630334-31f10d00-7432-11eb-937f-b6e810c7a7a9.png">
+</p>
 
 
 __Exploring Clustering__
+
 The first step is to determine if we should reduce the dimensionality of the feature space. Because the app is dynamic, I will have no control over how many features the user will choose. I am going to assume the maximum allowed features are selected and optimize based on this selection.
 
 Looking at the Scree plot

@@ -66,17 +66,21 @@ __Exploring Clustering__
 The first step is to determine if we should reduce the dimensionality of the feature space. Because the app is dynamic, I will have no control over how many features the user will choose. I am going to assume the maximum allowed features are selected and optimize based on this selection.
 
 Looking at the Scree plot
-![numberofcomp](https://user-images.githubusercontent.com/57594261/108615303-c0cd3d80-73d0-11eb-9fc7-8caf8bbfaeb5.png)
+
+![numberofcomp](https://user-images.githubusercontent.com/57594261/108615892-849cdb80-73d6-11eb-8026-2654a306eca0.png)
 We see three components as a good option, yet two is not a bad option option and easier to visiualize, I chose two components.
 
 For determining the number of clusters, the elbow plot, silhouette and Davies Bouldin were inspected
-![elbow](https://user-images.githubusercontent.com/57594261/108615300-c034a700-73d0-11eb-9b50-d8e2b352c984.png)
+![elbow](https://user-images.githubusercontent.com/57594261/108615894-85357200-73d6-11eb-99db-405072bccbc1.png)
 
 The elbow plot was not enough to determine the number of clusters, it hinted at 3-4. So I explored the silhouette score. The highest silhouette scores
-were at 2, 5 and 7 clusters.
-![silhouette](https://user-images.githubusercontent.com/57594261/108615313-c1fe6a80-73d0-11eb-8308-b963a1080728.png)
-Finally looking at the Davis Bouldin scores, lowest being at 7 clusters.
-![davies_bouldin](https://user-images.githubusercontent.com/57594261/108615787-887c2e00-73d5-11eb-954f-d30613c497e1.png)
+were at 2, 5 and 7 clusters.Finally looking at the Davis Bouldin scores, lowest being at 7 clusters.
+
+![silhouette](https://user-images.githubusercontent.com/57594261/108615895-85357200-73d6-11eb-8252-5bb8d7acc0e2.png)![davies_bouldin](https://user-images.githubusercontent.com/57594261/108615787-887c2e00-73d5-11eb-954f-d30613c497e1.png)
+
+
+
+
 
 
 And if we compare the two together:

@@ -79,7 +79,7 @@ At first I was tempted to use Vader's pretrained model for the labeling, but bec
 The training was performed on a very even data set of 1:1 positive to negatove reviews for a total of 6,000 reviews.
 
 <p align="center">
-  <img width="910" height="360" src="https://user-images.githubusercontent.com/57594261/108630337-361d2a80-7432-11eb-897a-828b956de744.png">
+  <img width="940" height="360" src="https://user-images.githubusercontent.com/57594261/108630337-361d2a80-7432-11eb-897a-828b956de744.png">
 </p>
 Tested the model's accuracy and compared against Vader's. Model gave acurracy of 90%, Vader's of 70% on test set.
 For Vader, I set the treshold to -1 for anything lower than or equal to  0, +1 otherwise.
@@ -116,8 +116,12 @@ For determining the number of clusters, the elbow plot, silhouette and Davies Bo
 
 The elbow plot was not enough to determine the number of clusters, it hinted at 3-4, possibly 7. So I explored the silhouette score. The highest silhouette scores
 were at 2, 5 and 7 clusters.Finally looking at the Davis Bouldin scores, lowest being at 7 clusters.
-
-![silhouette](https://user-images.githubusercontent.com/57594261/108615895-85357200-73d6-11eb-8252-5bb8d7acc0e2.png)![davies_bouldin](https://user-images.githubusercontent.com/57594261/108615787-887c2e00-73d5-11eb-954f-d30613c497e1.png)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/57594261/108615895-85357200-73d6-11eb-8252-5bb8d7acc0e2.png">
+</p>
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/57594261/108615787-887c2e00-73d5-11eb-954f-d30613c497e1.png">
+</p>
 
 
 
@@ -155,13 +159,14 @@ Davies Bouldin score for number of cluster(s) 8: 1.181
 
 We can see that two clusters would probably be optimal. When it came to implementing the program, for simplicity I chose to go for only one analysis, the silhouette score.
 The best silhoutte scores where at two clusters.
- 
+ <p align="center">
+  <img src="https://user-images.githubusercontent.com/57594261/108615306-c165d400-73d0-11eb-94a2-2ff3055dff58.png">
+</p>
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/57594261/108615302-c0cd3d80-73d0-11eb-99fd-b092d90ececc.png">
+</p>
 
-![Silhouete5](https://user-images.githubusercontent.com/57594261/108615306-c165d400-73d0-11eb-94a2-2ff3055dff58.png)
-![2clusters](https://user-images.githubusercontent.com/57594261/108615302-c0cd3d80-73d0-11eb-99fd-b092d90ececc.png)
-
-
-
+Depending on the keywords selected the program will loop through possibilities of clusters ranging from 2-10 and choose the number with the highest silhouette score.
 
  
 

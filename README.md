@@ -51,7 +51,9 @@ __Methods__
    * Used Silhouette Analysis to select best numbers of clusters
  * Performed K-means on the best number of clusters
  * Plotted the data using Altair
- * ![cluster_all](https://user-images.githubusercontent.com/57594261/108615311-c1fe6a80-73d0-11eb-8c8d-a58e5b1297da.png)
+ 
+![cluster_all](https://user-images.githubusercontent.com/57594261/108616230-9af86680-73d9-11eb-973b-838df0c7f3d2.png)
+
 4. Clustered selected keywords
  * Created a new dabase with company name as first column and the rest of the columns the score for the selected keywords (as oppsoed to all keywords)
  * Reduced data to 2 dimensions using PCA
@@ -59,7 +61,7 @@ __Methods__
    * Used Silhouette Analysis to select best numbers of clusters
  * Performed K-means on the best number of clusters
  * Plotted the data using Altair
- * ![cluster_selected4](https://user-images.githubusercontent.com/57594261/108615307-c165d400-73d0-11eb-80ad-70c9becb6263.png)
+![cluster_selected4](https://user-images.githubusercontent.com/57594261/108616234-9f248400-73d9-11eb-9a01-127305f90943.png)
 
 
 __Exploring Clustering__
@@ -79,7 +81,6 @@ The elbow plot was not enough to determine the number of clusters, it hinted at 
 were at 2, 5 and 7 clusters.Finally looking at the Davis Bouldin scores, lowest being at 7 clusters.
 
 ![silhouette](https://user-images.githubusercontent.com/57594261/108615895-85357200-73d6-11eb-8252-5bb8d7acc0e2.png)![davies_bouldin](https://user-images.githubusercontent.com/57594261/108615787-887c2e00-73d5-11eb-954f-d30613c497e1.png)
-
 
 
 
@@ -115,7 +116,7 @@ Score for number of cluster(s) 8: -579422.799
 Silhouette score for number of cluster(s) 8: 0.235
 Davies Bouldin score for number of cluster(s) 8: 1.181
 
-We can see that two clusters would probably be optimal. When it came to implementing the program, for simplicity I chose two go for only one analysis, the silhouette score.
+We can see that two clusters would probably be optimal. When it came to implementing the program, for simplicity I chose to go for only one analysis, the silhouette score.
 The best silhoutte scores where at two clusters.
  
 

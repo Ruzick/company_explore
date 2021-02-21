@@ -198,6 +198,12 @@ def largealtair_plot():
         r = d.loc[d['cluster'] == 5]
     if number==6:
         r = d.loc[d['cluster'] == 6] 
+    if number==7:
+        r = d.loc[d['cluster'] == 7] 
+    if number==8:
+        r = d.loc[d['cluster'] == 8]  
+    if number==9:
+        r = d.loc[d['cluster'] == 9] 
 
     #########################
     #
@@ -391,6 +397,10 @@ def largealtair_plot():
         r= di.loc[di['cluster'] == 6]
     if number2 == 7:
         r= di.loc[di['cluster'] == 7] 
+    if number2 == 8:
+        r= di.loc[di['cluster'] == 8] 
+    if number2 == 9:
+        r= di.loc[di['cluster'] == 9] 
 
     c_num2 = len(di.groupby('cluster'))
     ri2 = list(r.index.values)

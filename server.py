@@ -182,8 +182,12 @@ def largealtair_plot():
     #List of companies inside cluster group
     #
     ################################
+    try:
+        number = d.loc[[comp],['cluster']].values[0][0]
+    except:
+        return render_template('error.html')	
 
-    number = d.loc[[comp],['cluster']].values[0][0]
+    #number = d.loc[[comp],['cluster']].values[0][0]
     if number == 0:
         r = d.loc[d['cluster'] == 0]
     if number ==1:
@@ -323,7 +327,8 @@ def largealtair_plot():
     if not request.args.getlist("features"):           
         raise RuntimeError("Must check at least two boxes, go back and select two boxes. Also make triplesure your company field is not blank.")
     features = request.args.getlist("features") #and features from index
-
+    if len(features) < 2: #raise error
+        return render_template('error2.html')    	
     for keys in features:
         make_new[keys] = no_ind[keys]
 
